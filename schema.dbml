@@ -16,7 +16,7 @@ Table accounts as A {
   // big autoincrement integers (8-bytes/64-bits)
   id bigserial [pk]
   owner varchar [not null]
-  balance bitint [not null]
+  balance bigint [not null]
   // handle currency value validation in the application code
   currency varchar [not null]
   // timestamp with timezone infomation
@@ -30,7 +30,7 @@ Table accounts as A {
 // record all changes to the account balance
 Table entries as E {
   id bigserial [pk]
-  account_id bigint [ref: > A.id]
+  account_id bigint [not null, ref: > A.id]
   amount bigint [not null, note: 'can be negative or positive']
   created_at timestamptz [not null, default: `now()`]
 
@@ -42,8 +42,8 @@ Table entries as E {
 // Record all the money tranfers between two accounts
 Table transfers as T {
   id bigserial [pk]
-  from_account_id bigint [ref: > A.id]
-  to_account_id bigint [ref: > A.id]
+  from_account_id bigint [not null, ref: > A.id]
+  to_account_id bigint [not null, ref: > A.id]
   amount bigint [not null, note: 'must be positive']
   created_at timestamptz [not null, default: `now()`]
 

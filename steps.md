@@ -54,3 +54,15 @@
   ```
 
 - Lecture #5: [Write Golang unit tests for database CRUD with random data](https://youtu.be/phHDfOHB2PU?list=PLy_6D98if3ULEtXtNSY_2qN21VCKgoQAE)
+
+  - [lib/pq: Pure Go Postgres driver for database/sql - GitHub](https://github.com/lib/pq)
+  - [stretchr/testify: A toolkit with common assertions and mocks that plays nicely with the standard library - GitHub](https://github.com/stretchr/testify)
+
+  ```shell
+  go get github.com/lib/pq
+  go get github.com/stretchr/testify
+  
+  make test
+  ```
+
+- Lecture #6: [A clean way to implement database transaction in Golang](https://youtu.be/gBh__1eFwVI?list=PLy_6D98if3ULEtXtNSY_2qN21VCKgoQAE)

@@ -13,4 +13,8 @@ migratedown:
 sqlc:
 	sqlc generate
 
-.PHONY: createdb dropdb migrateup migratedown sqlc
+test: 
+	# verbose logs, report coverage, use ./... to run unit tests in all of them
+	go test -v -cover ./...
+
+.PHONY: createdb dropdb migrateup migratedown sqlc test

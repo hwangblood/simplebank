@@ -38,4 +38,19 @@
   make migratedown
   ```
 
-- Lecture #4:
+- Lecture #4: [Generate CRUD Golang code from SQL | Compare db/sql, gorm, sqlx & sqlc](https://youtu.be/prh0hTyI1sU?list=PLy_6D98if3ULEtXtNSY_2qN21VCKgoQAE)
+
+  - https://pkg.go.dev/database/sql (Easy to make mistakes, not caught until runtime)
+  - https://gorm.io (Must learn gorm's function, Run slowly on high load)
+  - https://github.com/jmoiron/sqlx (Failure won't occur until runtime)
+  - https://sqlc.dev (Catch SQL query errors before generating codes)
+
+  ```shell
+  go install github.com/kyleconroy/sqlc/cmd/sqlc@latest
+  
+  go mod init github.com/hwangblood/simplebank
+  
+  make sqlc
+  ```
+
+- Lecture #5: [Write Golang unit tests for database CRUD with random data](https://youtu.be/phHDfOHB2PU?list=PLy_6D98if3ULEtXtNSY_2qN21VCKgoQAE)
